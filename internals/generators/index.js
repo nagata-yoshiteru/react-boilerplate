@@ -32,7 +32,7 @@ module.exports = plop => {
       '**.js',
     )}`;
 
-    execSync(`npm run prettify -- "${folderPath}"`);
+    execSync(`yarn run prettify -- "${folderPath}"`);
     return folderPath;
   });
   plop.setActionType('backup', (answers, config) => {

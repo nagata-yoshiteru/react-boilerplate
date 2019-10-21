@@ -7,7 +7,7 @@
     "url": "git://github.com/react-boilerplate/react-boilerplate.git"
   },
   "engines": {
-    "npm": ">=5",
+    "yarn": ">=1.19",
     "node": ">=8.15.1"
   },
   "license": "MIT",
@@ -23,7 +23,7 @@
     "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
     "start:production": "yarn run test && yarn run build && yarn run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "presetup": "yarn add chalk shelljs compare-versions --no-save",
+    "presetup": "yarn add chalk shelljs compare-versions --dev",
     "setup": "node ./internals/scripts/setup.js",
     "clean": "node ./internals/scripts/clean.js",
     "clean:all": "yarn run analyze:clean && yarn run test:clean && yarn run build:clean",

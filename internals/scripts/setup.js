@@ -11,9 +11,9 @@ const animateProgress = require('./helpers/progress');
 const addCheckMark = require('./helpers/checkmark');
 const addXMark = require('./helpers/xmark');
 const {
-  requiredNpmVersion,
+  requiredYarnVersion,
   requiredNodeVersion,
-} = require('./helpers/get-required-node-npm-versions');
+} = require('./helpers/get-required-node-yarn-versions');
 const {
   initGitRepository,
   addToGitRepository,
@@ -125,25 +125,25 @@ function checkNodeVersion(minimalNodeVersion) {
 }
 
 /**
- * Check NPM version
- * @param {!number} minimalNpmVersion
+ * Check YARN version
+ * @param {!number} minimalYarnVersion
  * @returns {Promise<any>}
  */
-function checkNpmVersion(minimalNpmVersion) {
+function checkYarnVersion(minimalYarnVersion) {
   return new Promise((resolve, reject) => {
-    exec('npm --version', (err, stdout) => {
-      const npmVersion = stdout.trim();
+    exec('yarn --version', (err, stdout) => {
+      const yarnVersion = stdout.trim();
       if (err) {
         reject(new Error(err));
-      } else if (compareVersions(npmVersion, minimalNpmVersion) === -1) {
+      } else if (compareVersions(yarnVersion, minimalYarnVersion) === -1) {
         reject(
           new Error(
-            `You need NPM v${minimalNpmVersion} or above but you have v${npmVersion}`,
+            `You need YARN v${minimalYarnVersion} or above but you have v${yarnVersion}`,
           ),
         );
       }
 
-      resolve('NPM version OK');
+      resolve('YARN version OK');
     });
   });
 }
@@ -163,7 +163,7 @@ function installPackages() {
       interval = animateProgress('Installing dependencies');
     }, 500);
 
-    exec('npm install', err => {
+    exec('yarn install', err => {
       if (err) {
         reject(new Error(err));
       }
@@ -208,7 +208,7 @@ function endProcess() {
     reportError(reason),
   );
 
-  await checkNpmVersion(requiredNpmVersion).catch(reason =>
+  await checkYarnVersion(requiredYarnVersion).catch(reason =>
     reportError(reason),
   );
 

@@ -12,16 +12,19 @@
 if (!Intl.PluralRules) {
   require('@formatjs/intl-pluralrules/polyfill');
   require('@formatjs/intl-pluralrules/dist/locale-data/de');
+  require('@formatjs/intl-pluralrules/dist/locale-data/ja');
 }
 
 /* istanbul ignore next */
 if (!Intl.RelativeTimeFormat) {
   require('@formatjs/intl-relativetimeformat/polyfill');
   require('@formatjs/intl-relativetimeformat/dist/locale-data/de');
+  require('@formatjs/intl-relativetimeformat/dist/locale-data/ja');
 }
 
 const enTranslationMessages = require('./translations/en.json');
 const deTranslationMessages = require('./translations/de.json');
+const jaTranslationMessages = require('./translations/ja.json');
 
 const DEFAULT_LOCALE = 'en';
 
@@ -29,6 +32,7 @@ const DEFAULT_LOCALE = 'en';
 const appLocales = [
   'en',
   'de',
+  'ja',
 ];
 
 const formatTranslationMessages = (locale, messages) => {
@@ -49,6 +53,7 @@ const formatTranslationMessages = (locale, messages) => {
 const translationMessages = {
   en: formatTranslationMessages('en', enTranslationMessages),
   de: formatTranslationMessages('de', deTranslationMessages),
+  ja: formatTranslationMessages('ja', jaTranslationMessages),
 };
 
 exports.appLocales = appLocales;

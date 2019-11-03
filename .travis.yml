@@ -9,8 +9,8 @@ services:
 
 script:
   - node ./internals/scripts/generate-templates-for-linting
-  - npm test -- --maxWorkers=4
-  - npm run build
+  - yarn test -- --maxWorkers=4
+  - yarn run build
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -20,7 +20,7 @@ notifications:
   email:
     on_failure: change
 
-after_success: 'npm run coveralls'
+after_success: 'yarn run coveralls'
 
 cache:
   directories:

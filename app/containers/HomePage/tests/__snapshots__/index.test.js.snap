@@ -9,10 +9,14 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       <h2
         class="H2-egphza-0 HsCXl"
       >
-        Start your next react project in seconds
+        <span>
+          Start your next react project in seconds
+        </span>
       </h2>
       <p>
-        A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
+        <span>
+          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
+        </span>
       </p>
     </section>
     <section
@@ -21,7 +25,9 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       <h2
         class="H2-egphza-0 HsCXl"
       >
-        Try me!
+        <span>
+          Try me!
+        </span>
       </h2>
       <form
         class="Form-dmhz4x-0 ZClLh"
@@ -29,11 +35,15 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
         <label
           for="username"
         >
-          Show Github repositories by
+          <span>
+            Show Github repositories by
+          </span>
           <span
             class="AtPrefix-sc-1suuq8o-0 fvrDQr"
           >
-            @
+            <span>
+              @
+            </span>
           </span>
           <input
             class="Input-sc-19rkjmi-0 gyJaEd"

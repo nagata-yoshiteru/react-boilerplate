@@ -103,7 +103,7 @@ function reportErrors(reason) {
 function runLintingOnDirectory(relativePath) {
   return new Promise((resolve, reject) => {
     shell.exec(
-      `npm run lint:eslint "app/${relativePath}/**/**.js"`,
+      `yarn run lint:eslint "app/${relativePath}/**/**.js"`,
       {
         silent: true,
       },
@@ -123,7 +123,7 @@ function runLintingOnDirectory(relativePath) {
 function runLintingOnFile(filePath) {
   return new Promise((resolve, reject) => {
     shell.exec(
-      `npm run lint:eslint "${filePath}"`,
+      `yarn run lint:eslint "${filePath}"`,
       {
         silent: true,
       },

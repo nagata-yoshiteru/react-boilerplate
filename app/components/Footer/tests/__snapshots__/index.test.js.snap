@@ -5,7 +5,9 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
   className="Wrapper-wcfdfo-0 dPvBog"
 >
   <section>
-    This project is licensed under the MIT license.
+    <span>
+      This project is licensed under the MIT license.
+    </span>
   </section>
   <section>
     <div
@@ -30,16 +32,18 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
     </div>
   </section>
   <section>
-    
+    <span>
+      
       Made with love by 
-    <a
-      className="A-br8h0y-0 dwVNvo"
-      href="https://twitter.com/mxstbr"
-    >
-      Max Stoiber
-    </a>
-    .
+      <a
+        className="A-br8h0y-0 dwVNvo"
+        href="https://twitter.com/mxstbr"
+      >
+        Max Stoiber
+      </a>
+      .
     
+    </span>
   </section>
 </footer>
 `;

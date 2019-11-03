@@ -8,20 +8,18 @@
  *   script `extract-intl`, and must use CommonJS module syntax
  *   You CANNOT use import/export in this file.
  */
-/* istanbul ignore next */
-if (!Intl.PluralRules) {
-  require('@formatjs/intl-pluralrules/polyfill');
-  require('@formatjs/intl-pluralrules/dist/locale-data/de');
-}
-
-/* istanbul ignore next */
-if (!Intl.RelativeTimeFormat) {
-  require('@formatjs/intl-relativetimeformat/polyfill');
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/de');
-}
+const addLocaleData = require('react-intl').addLocaleData; //eslint-disable-line
+const enLocaleData = require('react-intl/locale-data/en');
+const deLocaleData = require('react-intl/locale-data/de');
+const jaLocaleData = require('react-intl/locale-data/ja');
 
 const enTranslationMessages = require('./translations/en.json');
 const deTranslationMessages = require('./translations/de.json');
+const jaTranslationMessages = require('./translations/ja.json');
+
+addLocaleData(enLocaleData);
+addLocaleData(deLocaleData);
+addLocaleData(jaLocaleData);
 
 const DEFAULT_LOCALE = 'en';
 
@@ -29,6 +27,7 @@ const DEFAULT_LOCALE = 'en';
 const appLocales = [
   'en',
   'de',
+  'ja',
 ];
 
 const formatTranslationMessages = (locale, messages) => {
@@ -49,6 +48,7 @@ const formatTranslationMessages = (locale, messages) => {
 const translationMessages = {
   en: formatTranslationMessages('en', enTranslationMessages),
   de: formatTranslationMessages('de', deTranslationMessages),
+  ja: formatTranslationMessages('ja', jaTranslationMessages),
 };
 
 exports.appLocales = appLocales;

@@ -32,7 +32,7 @@
     "lint:css": "stylelint app/**/*.js",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
     "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
-    "lint:js": "yarn run lint:eslint -- . ",
+    "lint:js": "yarn run lint:eslint . ",
     "pretest": "yarn run test:clean && yarn run lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
